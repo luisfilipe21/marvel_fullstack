@@ -70,7 +70,7 @@ export const CharacterProvider = ({ children }: IContextProps) => {
 
     const getOneHero = async (character: BaseSyntheticEvent) => {
         const name = character.target.value;
-        
+
         try {
             const { data } = await api.get("/characters", {
                 params: {
@@ -82,9 +82,11 @@ export const CharacterProvider = ({ children }: IContextProps) => {
         } catch (error) {
             console.error(error);
         }
+        if (name.length > 2) {
 
-        const newHero = characterList?.filter((filteredCharacter) => filteredCharacter.name.includes(name));
-        setCharacterSelected(newHero);
+            const newHero = characterList?.filter((filteredCharacter) => filteredCharacter.name.includes(name));
+            setCharacterSelected(newHero);
+        }
     }
 
 

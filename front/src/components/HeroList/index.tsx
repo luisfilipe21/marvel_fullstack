@@ -5,9 +5,7 @@ import { Card } from "./Card";
 
 export const HeroList = () => {
     const { characterList, characterSelected, isLoading } = useContext(CharacterContext);
-
-    console.log(characterSelected);
-    
+   
     return (
         <div>
             Lista
