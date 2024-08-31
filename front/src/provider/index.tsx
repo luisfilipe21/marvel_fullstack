@@ -82,11 +82,14 @@ export const CharacterProvider = ({ children }: IContextProps) => {
         } catch (error) {
             console.error(error);
         }
-        if (name.length > 2) {
 
-            const newHero = characterList?.filter((filteredCharacter) => filteredCharacter.name.includes(name));
-            setCharacterSelected(newHero);
-        }
+        setTimeout(() => {
+            if (name.length > 2) {
+                const newHero = characterList?.filter((filteredCharacter) => filteredCharacter.name.includes(name));
+                setCharacterSelected(newHero);
+            }
+
+        }, 2000)
     }
 
 
