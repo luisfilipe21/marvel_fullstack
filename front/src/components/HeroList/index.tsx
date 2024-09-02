@@ -7,25 +7,28 @@ export const HeroList = () => {
     const { getMoreCharacters, characterList, isLoading } = useContext(CharacterContext);
 
     return (
-        <section className="flex flex-col justify-center items-center w-full md:max-w-xl">
-            <button 
-            className="text-white text-lg font-semibold border-2 border-yellow-500 bg-yellow-500 p-2 rounded-3xl hover:bg-gray-400 hover:text-white"
-             onClick={getMoreCharacters}>
+        <section className="flex flex-col box-border justify-center items-center w-full max-w-xl md:max-w-7xl">
+
+            <button
+                className="my-8 text-white text-lg font-semibold border-2 border-Yellow-0 bg-Yellow-0 p-2 rounded-3xl hover:bg-Blue-0 hover:border-Blue-0 hover:text-black"
+                onClick={getMoreCharacters}>
                 More characters
             </button>
 
-            <div >
+            <div className="w-full max-w-5xl flex flex-wrap">
                 Lista
 
-                <ul className="flex flex-col gap-4 max-w-xl w-72 md:flex-row md:flex-wrap lg:w-96 ">
+                <ul className="flex flex-wrap justify-center gap-4">
                     {isLoading ?
                         <h1>
                             Carregando.........
                         </h1>
+
                         : characterList && characterList.map(character =>
                             <Card
                                 key={character.id}
                                 character={character}
+
                             />
                         )}
                 </ul>

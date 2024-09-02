@@ -5,6 +5,11 @@ export default {
     extend: {
       fontFamily: {
         marvel: ["Marvel", "system-ui"]
+      },
+      colors: {
+        Red: ["#ED1D24"],
+        Blue: ["#005A9C"],
+        Yellow: ["#FFCC00"]
       }
     },
   },
