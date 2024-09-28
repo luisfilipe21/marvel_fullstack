@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CharacterContext } from "../../provider";
 import { Card } from "./Card";
-
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const HeroList = () => {
     const { getMoreCharacters, characterList, isLoading } = useContext(CharacterContext);
@@ -15,14 +15,12 @@ export const HeroList = () => {
                 More characters
             </button>
 
-            <div className="w-full max-w-5xl flex flex-wrap">
-                Lista
-
+            <div className="w-full max-w-5xl flex flex-wrap justify-center py-8 ">
                 <ul className="flex flex-wrap justify-center gap-4">
                     {isLoading ?
-                        <h1>
-                            Carregando.........
-                        </h1>
+                        <div className="w-screen flex justify-center text-center ">
+                            <AiOutlineLoading3Quarters className="animate-spin" color="white" size={50} />
+                        </div>
 
                         : characterList && characterList.map(character =>
                             <Card
