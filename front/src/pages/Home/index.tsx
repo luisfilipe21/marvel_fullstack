@@ -1,15 +1,8 @@
 import { HeroList } from "../../components/HeroList"
 import { Header } from "../../components/Header"
-import { useContext } from "react"
-import { CharacterContext } from "../../provider"
 
 export const Home = () => {
-    const { comicId, comicBg } = useContext(CharacterContext);
-
-
-    console.log(comicId)
-    // console.log(comicBg)
-
+    
     return (
         <>
             <Header />

@@ -7,10 +7,6 @@ interface ICharacterData {
 }
 
 export const Card = ({ character }: ICharacterData) => {
-
-    console.log(character)
-    // console.log(character.comics)
-
     const limit = 18;
     const [isOpen, setIsOpen] = useState(false);
 
